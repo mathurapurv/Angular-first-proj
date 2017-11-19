@@ -1,0 +1,57 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Text processing with services</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-5">Original Text</div>
+      <div class="col-md-5">
+        <input type="text"
+               [(ngModel)]="originalText"
+               (keyup)="onTextChange()"
+               class="form-control"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Uppercase Text</div>
+      <div class="col-md-5">
+       {{upperCaseText}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Reversed Text</div>
+      <div class="col-md-5">
+        {{reversedText}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Reversed Uppercase Text</div>
+      <div class="col-md-5">
+        {{reverseUpperCaseText}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+       <button class="btn btn-primary "
+               [ngClass]="originalText==''?'disabled':''"
+               (click)="addStringToPile()" >
+         Add to pile
+       </button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div *ngFor='let element of textList'>
+    <div class="row">
+      <div class="col-md-3">{{element.originalText}}</div>
+      <div class="col-md-3">{{element.uppercaseText}}</div>
+      <div class="col-md-3">{{element.reverseText}}</div>
+    </div>
+  </div>
+
+</div>
+

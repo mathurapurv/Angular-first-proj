@@ -1,0 +1,41 @@
+<div class="row ">
+  <div class="col-md-5">
+    <p appPredefinedStyling name="para1">
+      what will directive do here ?
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="row ">
+  <div class="col-md-5 " name="para2">
+    <p appHighlightStyling >
+      i don't know
+    </p>
+  </div>
+</div>
+
+<hr/>
+
+
+<div class="row table-bordered">
+  <div class="col-md-3 " >
+    counterValue
+  </div>
+  <div class="col-md-3 " >
+    {{counterValue}}
+  </div>
+  <div class="col-md-3 " [ngSwitch]="counterValue">
+    <p *ngSwitchCase="5">permitted value : 5</p>
+    <p *ngSwitchCase="7">permitted value : 7</p>
+    <p *ngSwitchDefault="">permitted value : default</p>
+
+
+  </div>
+</div>
+
+
+
+<!--[ngStyle]="{'color': 'blue', 'font-size': '24px', 'font-weight': 'bold'}" -->

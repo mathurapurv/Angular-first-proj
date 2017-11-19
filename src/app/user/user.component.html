@@ -1,0 +1,18 @@
+<label>User List </label>
+<input  type="text"
+        class="form-control"
+        [(ngModel)] = "newUserName"
+/>
+<button
+  class="btn btn-primary"
+  (click)="onUserAddition()" >Add User</button>
+
+<table class="table table-striped">
+  <tbody>
+  <tr *ngFor="let user of userList; let i = index;">
+    <th scope="row">{{i}}</th>
+    <th scope="row">{{user.name}}</th>
+    <th scope="row">{{user.age}}</th>
+  </tr>
+  </tbody>
+</table>

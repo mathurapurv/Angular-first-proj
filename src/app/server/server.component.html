@@ -1,0 +1,44 @@
+this is the server component {{param1}} <br/>
+
+<button  class="btn btn-primary" 
+         [disabled]="!allowNewServer"
+         (click) = "onAddServer()"
+>Add</button>
+
+<p>{{buttonMessage}}</p>
+
+
+
+<label>Server Name - event handler</label>
+<input  type="text"
+        class="form-control"
+        (input)="onServerNameInput($event)"
+/>
+<p>{{serverName}}</p>
+
+
+<label>Server Name - two way binding </label>
+<input  type="text"
+        class="form-control"
+        [(ngModel)] = "serverNameModel" />
+
+<br/>
+
+<input  type="text"
+        class="form-control"
+        [(ngModel)] = "serverNameModel"
+/>
+
+<p>{{serverNameModel}}</p>
+
+<label>testing ngIf  </label>
+<p *ngIf="serverCreated"    >
+  this is supposed to appear
+</p>
+<p *ngIf="!serverCreated">this is supposed to disappear</p>
+
+
+<label>serverCreated </label>
+<p  [ngStyle]="{color : onStyleChange()}" > {{serverCreated}} </p>
+
+
